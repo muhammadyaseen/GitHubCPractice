@@ -22,8 +22,8 @@
  * @returns - A message which describes what this function returns e.g 'Address of myArg2 in myArg3'
  * @note - Any special note for example array bounds, limitations, cases where function fails should go here, brief and short
  */
-void SomeAwesomeFunction(int myArg1, char myArg2, char * myArg3)
-{
-
-
-}
+//void SomeAwesomeFunction(int myArg1, char myArg2, char * myArg3)
+//{
+//
+//
+//}
