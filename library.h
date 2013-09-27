@@ -4,6 +4,7 @@
 // START FUNCTION PROTOTYEOPES
 
 void printName(char*);
+void doSomething(char *);
 
 // END FUNCTION PROTOTYPES
 
@@ -32,3 +33,10 @@ void printName(char* name)
 {
     printf("\nThe given name is %s.\n", name);
 }
+
+void doSomething(char *task)
+{
+    puts(task);
+}
+
+
