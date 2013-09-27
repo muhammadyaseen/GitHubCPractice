@@ -4,6 +4,7 @@
 
 void printName(char *);
 float add(float, float);
+void ruinName(char*);
 
 void printName(char* name)
 {
@@ -28,9 +29,13 @@ int isEven(int x)
     return x % 2 == 0;
 }
 
-
 char someMagicFunc()
 {
     printf("I hate you all and you know it");
     return 'X';
+}
+
+void ruinName(char* name)
+{
+    name = "Ruined.";
 }
