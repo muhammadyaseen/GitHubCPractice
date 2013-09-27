@@ -5,6 +5,8 @@
 
 void printName(char*);
 void doSomething(char *);
+int boringForLoop(int);
+int sumPlease(int,int);
 
 // END FUNCTION PROTOTYPES
 
@@ -37,6 +39,19 @@ void printName(char* name)
 void doSomething(char *task)
 {
     puts(task);
+}
+
+int boringForLoop(int limit)
+{
+    for(int i = 0; i < limit; i++)
+    {
+        // I waste time
+    }
+}
+
+int sumPlease(int a, int b)
+{
+    return a + b;
 }
 
 
