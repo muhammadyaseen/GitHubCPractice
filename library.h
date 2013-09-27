@@ -3,7 +3,7 @@
 
 // START FUNCTION PROTOTYEOPES
 
-void printName(char*);
+void printName(char *);
 void doSomething(char *);
 int boringForLoop(int);
 int sumPlease(int,int);
@@ -60,4 +60,3 @@ float add(float x, float y)
 {
     return (x+y);
 }
-
