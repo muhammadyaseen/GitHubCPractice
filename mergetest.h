@@ -4,6 +4,7 @@
 
 void printName(char *);
 float add(float, float);
+void ruinName(char*);
 
 void printName(char* name)
 {
@@ -26,4 +27,9 @@ void RunLoo()
 int isEven(int x)
 {
     return x % 2 == 0;
+}
+
+void ruinName(char* name)
+{
+    name = "Ruined.";
 }
