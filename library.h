@@ -3,11 +3,11 @@
 
 // START FUNCTION PROTOTYEOPES
 
+void printName(char*);
 
 // END FUNCTION PROTOTYPES
 
 //START FUNCTION DECLARATIONS
-
 
 /* Below is an example function declaration, please don't delete it and follow the same pattern for your functions.
  * suggestions are welcome (variable and function name is irrelevant)
@@ -27,3 +27,8 @@
 //
 //
 //}
+
+void printName(char* name)
+{
+    printf("\nThe given name is %s.\n", name);
+}
