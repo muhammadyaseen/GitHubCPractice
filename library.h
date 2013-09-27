@@ -7,6 +7,7 @@ void printName(char*);
 void doSomething(char *);
 int boringForLoop(int);
 int sumPlease(int,int);
+float add(float, float);
 
 // END FUNCTION PROTOTYPES
 
@@ -54,4 +55,9 @@ int sumPlease(int a, int b)
     return a + b;
 }
 
+
+float add(float x, float y)
+{
+    return (x+y);
+}
 
