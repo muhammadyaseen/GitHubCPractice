@@ -5,6 +5,7 @@
 
 void printName(char*);
 void doSomething(char *);
+float add(float, float);
 
 // END FUNCTION PROTOTYPES
 
@@ -39,4 +40,7 @@ void doSomething(char *task)
     puts(task);
 }
 
-
+float add(float x, float y)
+{
+    return (x+y);
+}
