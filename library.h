@@ -6,6 +6,7 @@
 void printName(char*);
 void doSomething(char *);
 float add(float, float);
+float subtract(float, float);
 
 // END FUNCTION PROTOTYPES
 
@@ -35,6 +36,8 @@ void printName(char* name)
     printf("\nThe given name is %s.\n", name);
 }
 
+//Hello world
+
 void doSomething(char *task)
 {
     puts(task);
@@ -43,4 +46,9 @@ void doSomething(char *task)
 float add(float x, float y)
 {
     return (x+y);
+}
+
+float subtract(float x, float y)
+{
+    return (x-y);
 }
