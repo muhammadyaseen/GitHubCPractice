@@ -7,9 +7,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+#include <string.h>
+#include <conio.h>
 #include "library.h"
 
 int main(int argc, char** argv) {
+    
+    printf("\nEven Fabonacci sum : %d \n", evenFibonnaciTermsSum(4000000));
     
     return 0;
     

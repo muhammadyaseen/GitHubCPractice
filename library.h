@@ -1,13 +1,15 @@
 // PRE PROCESSOR DIRECTIVES
-
+#define TRUE 0
 
 // START FUNCTION PROTOTYEOPES
 
-void printName(char *);
-void doSomething(char *);
-int boringForLoop(int);
-int sumPlease(int,int);
-float add(float, float);
+int evenFibonnaciTermsSum(int);
+int largestPalindromeProduct(void);
+int primesSum(int);
+void amicableNumbers();
+int isPalindrome(int);
+int isPrime(int);
+
 
 // END FUNCTION PROTOTYPES
 
@@ -32,31 +34,30 @@ float add(float, float);
 //
 //}
 
-void printName(char* name)
-{
-    printf("\nThe given name is %s.\n", name);
-}
+/* @descripton - Calculates the sum of terms of Fibonacci Sequence.
+ * 
+ * @param limit - Upper limit which the sum shouldn't exceed
+ * 
+ * @returns - Sum of terms, where sum is always less than or equal to limit
+ * @note - first two terms of fibonacci sequence are 0 and 1 respectively, nth term is sum or (n-1)th and (n-2)th term, n > or = 2
+ */
 
-void doSomething(char *task)
+int evenFibonnaciTermsSum(int limit)
 {
-    puts(task);
-}
-
-int boringForLoop(int limit)
-{
-    for(int i = 0; i < limit; i++)
+    int sum  = 0;
+    int firstTerm = 0, secondTerm = 1;
+    int nextTerm = 0;
+    
+    while ( nextTerm <= limit)
     {
-        // I waste time
+        if ( nextTerm % 2 == 0 )
+            sum += nextTerm;
+        
+        nextTerm = firstTerm + secondTerm;
+        
+        firstTerm = secondTerm;
+        secondTerm = nextTerm;       
     }
-}
-
-int sumPlease(int a, int b)
-{
-    return a + b;
-}
-
-
-float add(float x, float y)
-{
-    return (x+y);
+    
+    return sum;
 }
