@@ -17,6 +17,10 @@ int main(int argc, char** argv) {
     printf("\nEven Fabonacci sum : %d \n", evenFibonnaciTermsSum(4000000));
     
     printf("\nLargest Palindrome product : %d \n", largestPalindromeProduct());
+    
+    printf("\nSum of primes is : %d\n", primesSum(41));
+    
+    printf("\nAmicable Number sum is : %d\n", amicableNumbers());
 
     return 0;
     
