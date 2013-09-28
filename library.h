@@ -203,6 +203,7 @@ int isPrime(int number)
 /* @descripton - Calculates the factorial and sums each of it's digits.
  * 
  * @param int - The number whose factorial you which to use.
+ * @param limit - try to keep it under 20. Not sure of the behavior after that.
  * 
  * @returns unsigned long - Sum of the digits of the factorial.
  */
@@ -212,6 +213,7 @@ unsigned long sumFactorialDigits(int n)
     unsigned long long factorial = 1; 
     unsigned long sum = 0;
     
+    //If input is negative
     if(n < 0)
     {
         printf("\nFactorial of a negative number is not possible, you muppet!\n");
@@ -219,6 +221,7 @@ unsigned long sumFactorialDigits(int n)
     }
     
     else
+        //Factorial Calculation
         while(n > 1)
         {
             factorial = factorial * n--;
@@ -226,6 +229,7 @@ unsigned long sumFactorialDigits(int n)
     
     printf("\nFactorial Result = %llu\n", factorial);
     
+    //Adding each digit of the factorial
     while (factorial != 0)
     {
         sum += (factorial % 10);
@@ -237,9 +241,15 @@ unsigned long sumFactorialDigits(int n)
 
 /* @descripton - Finds the truncatable primes up to 75000 and sums them up.
  * 
- * @param void - None what so ever.
+ * @param void - None what so ever. There are only eleven of them anyways.
  * 
- * @returns unsigned long long - Sum of the truncatable Primes
+ * @returns unsigned long long - Sum of the truncatable primes.
+ * 
+ * @notes - Example of Truncatable Primes: 
+ * 
+ * The number 3797. Being prime itself, it is possible to continuously remove 
+ * digits from left to right, and remains prime at each stage: 3797, 797, 97, 
+ * and 7. Similarly we can work from right to left: 3797, 379, 37, and 3.
  */
 
 unsigned long long sumTruncatablePrimes(void)
