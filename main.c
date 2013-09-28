@@ -16,6 +16,8 @@ int main(int argc, char** argv) {
     
     printf("\nEven Fabonacci sum : %d \n", evenFibonnaciTermsSum(4000000));
     
+    printf("\nLargest Palindrome product : %d \n", largestPalindromeProduct());
+
     return 0;
     
 }

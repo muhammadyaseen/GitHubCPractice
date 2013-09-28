@@ -61,3 +61,62 @@ int evenFibonnaciTermsSum(int limit)
     
     return sum;
 }
+
+/* @descripton - Calculates largest palindrome product formed from two three-digit numbers
+ * 
+ * @returns - largest palindrome product
+ * 
+ * @note - Palindromes read the same, either ways e.g. 9009, 7007, 666,
+ */
+
+int largestPalindromeProduct()
+{   
+    int largestPalindrome = 0;
+
+    for( int i = 100; i <= 999; i++)
+    {
+        for(int j = 100; j <= 999; j++)
+        {
+            int product = i*j;
+            
+            if ( isPalindrome(product) == TRUE && product > largestPalindrome)
+            {
+                largestPalindrome = product;
+            }
+        }
+    }
+    
+    //all palindromes have been added to list
+    // now we need to get the largest one
+
+    return largestPalindrome;  
+}
+
+/* @descripton - Decides whether the given number is a palindrome or not. It is used in largestPalindromeProduct() function as helper function
+ * 
+ * @param number - number to check
+ * 
+ * @returns - 0 or any value greater than 0 or less than zero, just as strcmp() does
+ * 
+ * @note - we only reserve 6 bytes for the string because a maximum of 6 digit palindrome is possible
+ */
+
+int isPalindrome(int number)
+{
+    char * testString = (char *)malloc( 6 * sizeof(char)); //a maximum of 6 digit palindrome is possible
+    
+    itoa(number, testString, 10);
+    
+    // we have to duplicate string because strrev() reverses the string in-place, in this way we loose our testString
+    // hence to compare testString with reversed string we need a non-reversed string
+    char * original = (char *)strdup(testString);
+    
+    strrev(testString);
+
+    int result = strcmp( original, testString );
+        
+    free(original);
+    free(testString);
+    
+    return result;
+}
