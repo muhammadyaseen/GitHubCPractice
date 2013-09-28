@@ -9,7 +9,8 @@ int primesSum(int);
 int amicableNumbers(void);
 int isPalindrome(int);
 int isPrime(int);
-
+unsigned long sumFactorialDigits(int);
+unsigned long long sumTruncatablePrimes(void);
 
 // END FUNCTION PROTOTYPES
 
@@ -197,4 +198,169 @@ int isPrime(int number)
     }
     
     return TRUE;
+}
+
+/* @descripton - Calculates the factorial and sums each of it's digits.
+ * 
+ * @param int - The number whose factorial you which to use.
+ * 
+ * @returns unsigned long - Sum of the digits of the factorial.
+ */
+
+unsigned long sumFactorialDigits(int n)
+{ 
+    unsigned long long factorial = 1; 
+    unsigned long sum = 0;
+    
+    if(n < 0)
+    {
+        printf("\nFactorial of a negative number is not possible, you muppet!\n");
+        return 0;
+    }
+    
+    else
+        while(n > 1)
+        {
+            factorial = factorial * n--;
+        }
+    
+    printf("\nFactorial Result = %llu\n", factorial);
+    
+    while (factorial != 0)
+    {
+        sum += (factorial % 10);
+        factorial /= 10;
+    }
+    
+    return sum;
+}
+
+/* @descripton - Finds the truncatable primes up to 75000 and sums them up.
+ * 
+ * @param void - None what so ever.
+ * 
+ * @returns unsigned long long - Sum of the truncatable Primes
+ */
+
+unsigned long long sumTruncatablePrimes(void)
+{
+    unsigned int rem = 0;
+    unsigned long truncatedNumber;
+    unsigned long long sum = 0;
+    
+    for(unsigned long long i = 11; i < 1000000; i++)
+    {
+        //Checks for prime number
+        for(unsigned long j = 2; j < i/2; j++)
+        {
+            rem = i%j;
+            if(rem == 0)
+                break;
+        }
+        
+        //Enters if 'i' is prime and checks for truncating from the RIGHT
+        if (rem != 0)
+        {
+            //Declaration for another variable so 'i' is not tampered with
+            //Also removes the RIGHT most digit
+            truncatedNumber = i / 10;
+            
+            //Moves on if the number has a 1 on the extreme right side
+            if(truncatedNumber == 1) 
+                continue;
+
+            //Loop to modify and check whether the numbers are prime as well
+            while (truncatedNumber != 0)
+            {
+                //Checks for prime number
+                for(unsigned long j = 2; j < truncatedNumber; j++)
+                {
+                    rem = truncatedNumber % j;
+                    if(rem == 0)
+                    {
+                        break;
+                    }
+                }
+                
+                //Enters if 'truncatedVariable' is NOT prime and breaks out of 
+                //the loop
+                if(rem == 0)
+                        break;
+                
+                //Removes one number from the RIGHT of the number
+                
+                truncatedNumber /= 10;
+                
+                //Breaks the loop if the number has a 1 on the extreme right side
+                if(truncatedNumber == 1) 
+                    break;
+                
+                //Does everything all over again until truncatedNumber == 0
+            }
+        }//End of truncations from the RIGHT
+        
+        
+        //Enters if truncations from the right are primes and 
+        //checks for truncating from the LEFT
+        if(rem != 0 && truncatedNumber != 1)
+        {   
+            //Calculating the divider for i
+            unsigned long divider = 1;
+            
+            while(i % divider != i)
+                divider *= 10;
+            
+            divider /= 10;
+            
+            //First truncation from the LEFT
+            truncatedNumber = i % divider;
+            
+            //Moves on if the number has a 1 on the extreme right side
+            if(truncatedNumber == 1) 
+                continue;
+            
+            //Breaks the loop if the number has a 1 on the extreme left side
+            if(truncatedNumber == 1) 
+                break;
+            
+            //Loop to modify and check whether the numbers are prime as well
+            while (truncatedNumber != 0)
+            {
+                //Checks for prime number
+                for(unsigned long j = 2; j < truncatedNumber; j++)
+                {
+                    rem = truncatedNumber % j;
+                    if(rem == 0)
+                        break;
+                }
+                
+                //Enters if 'truncatedVariable' is NOT prime and breaks out of 
+                //the loop
+                if(rem == 0)
+                        break;
+                
+                //Adjsuts the divider to truncate one less from the LEFT
+                divider /= 10;
+                
+                //Removes one number from the LEFT of the number
+                truncatedNumber = truncatedNumber % divider;
+                
+                //Breaks the loop if the number has a 1 on the extreme right side
+                if(truncatedNumber == 1) 
+                    break;
+                
+                //Does everything all over again until truncatedNumber == 0
+                //or rem == 0, that is truncatedNumber is not a prime
+            }
+            
+        }//End of truncations from the LEFT
+      
+        if(rem != 0 && truncatedNumber != 1)
+        {
+            printf("\nTruncatable Prime: %llu\n", i);
+            sum += i;
+        }      
+    }
+    
+    printf("\nThe sum of the Truncatable Primes is %llu\n\n", sum);    
 }
