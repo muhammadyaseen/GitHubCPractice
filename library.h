@@ -12,6 +12,7 @@ int isPrime(int);
 unsigned long sumFactorialDigits(int);
 unsigned long long sumTruncatablePrimes(void);
 char* strdel(char*, int);
+char* strReverse(char*, char*);
 
 // END FUNCTION PROTOTYPES
 
@@ -404,7 +405,29 @@ char* strdel(char *str, int pos)
     for(int i = pos; i < (len); i++)
         *(str+i) = *(str + i + 1);
     
-    //*(str + len) = '\0';
-    
     return str;
+}
+
+/* @descripton - Reverses a given string and stores it another string.
+ * 
+ * @param char *dest - The string to be modified
+ * @param char *src - The string you wish to remove.
+ * 
+ * @returns char* - Address of the reversed string if you wish to use it in 
+ *                  printf.
+ * 
+ * @note - You'll need to give it a destination pointer, so declare a char
+ *         pointer with sufficient memory using malloc().
+ */
+
+char* strReverse(char *dest, char *src)
+{
+    int len = strlen(src);
+    
+    for (int i = (len - 1), j = 0; i > -1; i--, j++)
+        *(dest + j) = *(src + i);
+    
+    *(dest + len) = '\0';
+    
+    return dest;
 }
