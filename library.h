@@ -11,6 +11,7 @@ int isPalindrome(int);
 int isPrime(int);
 unsigned long sumFactorialDigits(int);
 unsigned long long sumTruncatablePrimes(void);
+char* strdel(char*, int);
 
 // END FUNCTION PROTOTYPES
 
@@ -250,6 +251,9 @@ unsigned long sumFactorialDigits(int n)
  * The number 3797. Being prime itself, it is possible to continuously remove 
  * digits from left to right, and remains prime at each stage: 3797, 797, 97, 
  * and 7. Similarly we can work from right to left: 3797, 379, 37, and 3.
+ * 
+ * This function WILL take time. Around 5~20 minutes depending on how fast your
+ * computer is.
  */
 
 unsigned long long sumTruncatablePrimes(void)
@@ -373,4 +377,34 @@ unsigned long long sumTruncatablePrimes(void)
     }
     
     printf("\nThe sum of the Truncatable Primes is %llu\n\n", sum);    
+}
+
+/* @descripton - Deletes the character at the given index.
+ * 
+ * @param char* - The string to be modified
+ * @param int - The index of the character you wish to remove.
+ * 
+ * @returns - Address of the string if you wish to use it in printf.
+ * 
+ * @note - I've set up some basic error checking but be careful not to pass in
+ *         a string with no null character in the end.
+ */
+
+
+char* strdel(char *str, int pos)
+{
+    if(pos > strlen(str) || pos < 0)
+    {
+        printf("\nThe index does not exist.\n");
+        return NULL;
+    }
+    
+    int len = strlen(str);
+    
+    for(int i = pos; i < (len); i++)
+        *(str+i) = *(str + i + 1);
+    
+    //*(str + len) = '\0';
+    
+    return str;
 }
