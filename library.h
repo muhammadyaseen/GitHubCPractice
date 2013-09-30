@@ -252,9 +252,6 @@ unsigned long sumFactorialDigits(int n)
  * The number 3797. Being prime itself, it is possible to continuously remove 
  * digits from left to right, and remains prime at each stage: 3797, 797, 97, 
  * and 7. Similarly we can work from right to left: 3797, 379, 37, and 3.
- * 
- * This function WILL take time. Around 5~20 minutes depending on how fast your
- * computer is.
  */
 
 unsigned long long sumTruncatablePrimes(void)
@@ -263,10 +260,10 @@ unsigned long long sumTruncatablePrimes(void)
     unsigned long truncatedNumber;
     unsigned long long sum = 0;
     
-    for(unsigned long long i = 11; i < 1000000; i++)
+    for(unsigned long long i = 11; i < 750000; i++)
     {
         //Checks for prime number
-        for(unsigned long j = 2; j < i/2; j++)
+        for(unsigned long j = 2; j < floor(sqrt(i)) + 1; j++)
         {
             rem = i%j;
             if(rem == 0)
@@ -411,7 +408,7 @@ char* strdel(char *str, int pos)
 /* @descripton - Reverses a given string and stores it another string.
  * 
  * @param char *dest - The string to be modified
- * @param char *src - The string you wish to remove.
+ * @param char *src - The string you wish to reverse.
  * 
  * @returns char* - Address of the reversed string if you wish to use it in 
  *                  printf.

@@ -21,6 +21,8 @@ int main(int argc, char** argv) {
     printf("\nSum of primes is : %d\n", primesSum(41));
     
     printf("\nAmicable Number sum is : %d\n", amicableNumbers());
+    
+    sumTruncatablePrimes();
 
     return 0;
     
