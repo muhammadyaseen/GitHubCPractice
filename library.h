@@ -369,12 +369,11 @@ unsigned long long sumTruncatablePrimes(void)
       
         if(rem != 0 && truncatedNumber != 1)
         {
-            printf("\nTruncatable Prime: %llu\n", i);
             sum += i;
         }      
     }
     
-    printf("\nThe sum of the Truncatable Primes is %llu\n\n", sum);    
+    return sum;    
 }
 
 /* @descripton - Deletes the character at the given index.
