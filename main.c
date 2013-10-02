@@ -22,6 +22,8 @@ int main(int argc, char** argv) {
     
     printf("\nAmicable Number sum is : %d\n", amicableNumbers());
 
+   strncatt("Greetings! ","To all and To Me",6);
+
     return 0;
     
 }
