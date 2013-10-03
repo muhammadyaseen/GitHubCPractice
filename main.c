@@ -14,6 +14,9 @@
 
 int main(int argc, char** argv) {
     
+    char dest[L], src[L];
+    int n;
+    
     printf("\nEven Fabonacci sum : %d \n", evenFibonnaciTermsSum(4000000));
     
     printf("\nLargest Palindrome product : %d \n", largestPalindromeProduct());
@@ -22,13 +25,20 @@ int main(int argc, char** argv) {
     
     printf("\nAmicable Number sum is : %d\n", amicableNumbers());
     
-    //sumTruncatablePrimes();
-    
     sumFactorialDigits(13);
 
-    //strncatt("Greetings! ","To all and To Me", 6);
+    printf("\nTrucatable Primes Sum is : %ld\n\n", sumTruncatablePrimes());
     
-    printf("\nTrucatable Primes Sum is : %ld\n", sumTruncatablePrimes());
+    puts("Enter Destination String: ");
+    gets(dest);
+    
+    puts("Enter Source String: ");
+    gets(src);
+    
+    puts("Enter n: ");
+    scanf("%d",&n);
+    
+    strncatt(dest,src,n);
     
     return 0;
   
