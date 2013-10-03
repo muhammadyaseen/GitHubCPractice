@@ -26,7 +26,11 @@ int main(int argc, char** argv) {
     
     sumFactorialDigits(13);
 
-    return 0;
+    strncatt("Greetings! ","To all and To Me", 6);
     
+    printf("\nTrucatable Primes Sum is : %ld\n", sumTruncatablePrimes());
+    
+    return 0;
+  
 }
 
