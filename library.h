@@ -1,5 +1,6 @@
 // PRE PROCESSOR DIRECTIVES
 #define TRUE 0
+#define L 20
 
 // START FUNCTION PROTOTYEOPES
 
@@ -13,8 +14,14 @@ unsigned long sumFactorialDigits(int);
 unsigned long long sumTruncatablePrimes(void);
 char* strdel(char*, int);
 char* strReverse(char*, char*);
+<<<<<<< HEAD
 int matMult(void);
 int matAdd(void);
+=======
+void strncatt(char [], char [], int);
+
+
+>>>>>>> 6ef280077051cd3382da2f291d4355ad467058b4
 
 
 // END FUNCTION PROTOTYPES
@@ -431,6 +438,7 @@ char* strReverse(char *dest, char *src)
     return dest;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -517,4 +525,27 @@ int matAdd(void){
             printf("%d\t",a[i][j]+b[i][j]);  
     }
     return 0;
+=======
+/* @descripton - Concatenates n characters of a given string (src) to another string (dest)
+ * 
+ * @param char dest - The string to be modified
+ * @param char src - The string you wish to add in dest. 
+ * @returns void - Returns nothing.
+ *
+ */
+
+void strncatt(char dest[], char src[], int n ) {
+    int i, j=0;
+    i=strlen(dest);
+    
+    while(j!=n) {
+        dest[i++]=src[j++];
+    }
+        
+    dest[i]='\0';
+    
+    printf( "\nConcatenated : ");
+    puts(dest);
+    
+>>>>>>> 6ef280077051cd3382da2f291d4355ad467058b4
 }

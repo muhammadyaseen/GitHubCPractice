@@ -14,6 +14,9 @@
 
 int main(int argc, char** argv) {
     
+    char dest[L], src[L];
+    int n;
+    
     printf("\nEven Fabonacci sum : %d \n", evenFibonnaciTermsSum(4000000));
     
     printf("\nLargest Palindrome product : %d \n", largestPalindromeProduct());
@@ -22,9 +25,33 @@ int main(int argc, char** argv) {
     
     printf("\nAmicable Number sum is : %d\n", amicableNumbers());
     
-    printf("\nTrucatable Primes Sum is : %ld\n", sumTruncatablePrimes());
+    sumFactorialDigits(13);
+
+    printf("\nTrucatable Primes Sum is : %ld\n\n", sumTruncatablePrimes());
     
-    return 0;
+    puts("\nEnter Destination String: ");
+    gets(dest);
+    
+    puts("\nEnter Source String: ");
+    gets(src);
+    
+    puts("\nEnter n: ");
+    scanf("%d",&n);
+    
+    strncatt(dest, src, n);
+    
+    char * s1 = (char *)malloc(100);
+    
+    puts("\nEnter String to be reveresed: ");
+    
+    gets(s1);
+    
+    printf("\n Deleted : %s", (strdel(s1,2)));
+    
+    char * s2 = (char *)malloc(100);
+    
+    printf("\n Reversed : %s \n", strReverse(s2,s1));
   
+    return 0;
 }
 
