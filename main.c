@@ -29,18 +29,29 @@ int main(int argc, char** argv) {
 
     printf("\nTrucatable Primes Sum is : %ld\n\n", sumTruncatablePrimes());
     
-    puts("Enter Destination String: ");
+    puts("\nEnter Destination String: ");
     gets(dest);
     
-    puts("Enter Source String: ");
+    puts("\nEnter Source String: ");
     gets(src);
     
-    puts("Enter n: ");
+    puts("\nEnter n: ");
     scanf("%d",&n);
     
-    strncatt(dest,src,n);
+    strncatt(dest, src, n);
     
-    return 0;
+    char * s1 = (char *)malloc(100);
+    
+    puts("\nEnter String to be reveresed: ");
+    
+    gets(s1);
+    
+    printf("\n Deleted : %s", (strdel(s1,2)));
+    
+    char * s2 = (char *)malloc(100);
+    
+    printf("\n Reversed : %s \n", strReverse(s2,s1));
   
+    return 0;
 }
 

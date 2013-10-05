@@ -451,6 +451,7 @@ void strncatt(char dest[], char src[], int n ) {
         
     dest[i]='\0';
     
+    printf( "\nConcatenated : ");
     puts(dest);
     
 }
