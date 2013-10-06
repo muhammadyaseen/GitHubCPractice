@@ -14,14 +14,9 @@ unsigned long sumFactorialDigits(int);
 unsigned long long sumTruncatablePrimes(void);
 char* strdel(char*, int);
 char* strReverse(char*, char*);
-<<<<<<< HEAD
 int matMult(void);
 int matAdd(void);
-=======
 void strncatt(char [], char [], int);
-
-
->>>>>>> 6ef280077051cd3382da2f291d4355ad467058b4
 
 
 // END FUNCTION PROTOTYPES
@@ -438,9 +433,6 @@ char* strReverse(char *dest, char *src)
     return dest;
 }
 
-<<<<<<< HEAD
-
-
 
 int matMult(void){
 	int a[10][10],b[10][10],c[10][10],n=0,m=0,i=0,j=0,p=0,q=0,k=0;
@@ -498,26 +490,31 @@ int matMult(void){
 
 
 
-int matAdd(void){
-    int r,c,i,j;
+int matAdd() {
+    int r, c, i, j;
+    
     int a[200][200],b[200][200];
     printf("Enter the matrix: ");
     scanf("%d %d",&r,&c);
     
     for(i=0;i<r;i++)
+    {
         for(j=0;j<c;j++)
         {
             printf("Enter element no: [%d] [%d]: ",i+1,j+1);
             scanf("%d",&a[i][j]);
         }
-
+    }
+    
     for(i=0;i<r;i++)
+    {
         for(j=0;j<c;j++)
         {
             printf("Enter element no: [%d] [%d]: ",i+1,j+1);
             scanf("%d",&b[i][j]);
         }
-
+    }
+    
     for(i=0;i<r;i++)
     {
         printf("\n");
@@ -525,7 +522,7 @@ int matAdd(void){
             printf("%d\t",a[i][j]+b[i][j]);  
     }
     return 0;
-=======
+}
 /* @descripton - Concatenates n characters of a given string (src) to another string (dest)
  * 
  * @param char dest - The string to be modified
