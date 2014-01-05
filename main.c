@@ -6,7 +6,7 @@
  */
 
  // Ladder of #includes
- 
+ // Includes what we need
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
